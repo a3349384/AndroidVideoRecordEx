@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:color/black"
+             android:orientation="vertical">
+    <!--录制视频展示区域-->
+    <com.lerni.video.views.CameraPreviewView
+        android:id="@+id/cameraPreviewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--底部操作区域-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <!--录像进度条-->
+        <com.zmy.javacvdemo.widget.VideoRecordProgressBar
+            android:id="@+id/progressBar_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/progressbar_video_drawable"/>
+
+        <!--短视频或照片选择区域-->
+        <com.zmy.javacvdemo.widget.TextSplitView
+            android:id="@+id/textSplitView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+            <Button
+                android:id="@+id/view_record"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:text="按住"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
